@@ -1,4 +1,9 @@
 import React, { useState } from "react";
+import Select from "react-select";
+
+const interestsOptions = [
+  "html", "css", "js"
+];
 
 const SignUpForm = () => {
   const [formData, setFormData] = useState({
@@ -6,35 +11,39 @@ const SignUpForm = () => {
     lastName: "",
     email: "",
     password: "",
+    courses: [],
   });
 
-  const [message, setmessage] = useState("");
+  const [message, setMessage] = useState("");
+  const [checkbox, setCheckbox] = useState(false);
+  const [selectedInterests, setSelectedInterests] = useState([]);
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
+  const handleInputChange = (key, value) => {
+    if (key === "courses") {
+      setFormData((prevData) => ({...prevData, courses: [...prevData.courses, {name: value}]}));
+    } else {
+      setFormData((prevData) => ({
+        ...prevData,
+        [key]: value,
+      }));
+      
+    }
+  };
+console.log(formData)
+  const checkboxHandler = () => {
+    setCheckbox(!checkbox);
   };
 
-  const [checkbox, setcheckbox] = useState(false);
-  const checkboxhandler = () => {
-    setcheckbox(!checkbox);
+  const handleInterestsChange = (selectedOptions) => {
+    setSelectedInterests(selectedOptions);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (formData.password !== formData.confirmPassword) {
-      console.error("Passwords don't match");
-      setmessage(
-        "Passwords don't match, look well, too much garri  don display ur eyeball none, ogun go kill u"
-      );
-      return;
-    }
+    
 
-    fetch("https://lms-api-iiyp.onrender.com/", {
+    fetch("https://lms-backend-2mm5.onrender.com/user/registration", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -43,15 +52,17 @@ const SignUpForm = () => {
     })
       .then((response) => {
         if (response.ok) {
-          console.log("Form submitted successfully!");
-          // You can perform further actions here on successful submission
+          return response.json();
         } else {
-          console.error("Form submission failed.");
-          // You can handle the error scenario here
+          throw new Error("Error submitting form");
         }
+      })
+      .then((data) => {
+        setMessage("Form submitted successfully!");
       })
       .catch((error) => {
         console.error("Error submitting form:", error);
+        setMessage("Error submitting form. Please try again later.");
       });
   };
 
@@ -61,20 +72,21 @@ const SignUpForm = () => {
         onSubmit={handleSubmit}
         className="bg-[gray]  shadow-md rounded px-8 pt-6 pb-8 mb-4"
       >
-        <div className="mb-4">
+
+<div className="mb-4">
           <label
             className="block text-gray-700 text-sm font-bold mb-2"
-            htmlFor="firstName"
+            htmlFor="lastName"
           >
             First Name
           </label>
           <input
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="firstName"
+            id="firstname"
             type="text"
             name="firstName"
             value={formData.firstName}
-            onChange={handleInputChange}
+            onChange={(e) =>handleInputChange("firstName", e.target.value)}
             required
           />
         </div>
@@ -92,7 +104,7 @@ const SignUpForm = () => {
             type="text"
             name="lastName"
             value={formData.lastName}
-            onChange={handleInputChange}
+            onChange={(e) =>handleInputChange("lastName", e.target.value)}
             required
           />
         </div>
@@ -110,7 +122,7 @@ const SignUpForm = () => {
             type="text"
             name="email"
             value={formData.email}
-            onChange={handleInputChange}
+            onChange={(e) =>handleInputChange("email", e.target.value)}
             required
           />
         </div>
@@ -128,21 +140,26 @@ const SignUpForm = () => {
             type="text"
             name="password"
             value={formData.password}
-            onChange={handleInputChange}
+            onChange={(e) =>handleInputChange("password", e.target.value)}
             required
           />
         </div>
 
-        <div>
-      <label>
-        <input
-          type="checkbox"
-          checked={checkbox}
-          onChange={checkboxhandler}
-        />
-        Check me!
-      </label>
-    </div>
+       
+
+        <div className="mb-4">
+          <label className="block text-gray-700 text-sm font-bold mb-2">
+            Interests
+          </label>
+         
+          <select multiple name="courses" id="" onChange={(e) => handleInputChange("courses", e.target.value)}>
+            {interestsOptions.map((item) => (
+<option value={item}>
+  
+  {item}</option>
+            ))}
+          </select>
+        </div>
 
         <div className="flex items-center justify-between">
           <button
@@ -152,7 +169,7 @@ const SignUpForm = () => {
             Sign Up
           </button>
         </div>
-        {<div className="text-[#0769b2] text-center">{message}</div>}
+        {<div className="text-[black] text-center">{message}</div>}
       </form>
     </div>
   );
