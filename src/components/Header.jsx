@@ -1,14 +1,9 @@
 import React from 'react'
-import sail1 from '../images/sail1.png'
 
 const Header = ({ pageTitle }) => {
   return (
-    <header className='h-[6rem] shadow-sm shadow-[grey] bg-white flex px-[2rem]'>
-      <div className=''>
-        <img src={ sail1 } alt="" className='h-[5rem] w-[5rem] justify-self-start'/>
-      </div>
-
-      <h1 className='font-bold'>{pageTitle}</h1>
+    <header className='flex px-[2rem] bg-[white]'>
+      <h1 className='font-extrabold text-[1.5rem] absolute left-[50rem] top-[2rem]'>{pageTitle}</h1>
     </header>
   )
 }
