@@ -7,21 +7,21 @@ export default class Main extends Component {
     return (
       <div className="w-full h-[100%] md:h-auto grid md:grid-cols-2">
         <div className="bg-white pt-8 md:pt-[2rem] ">
-          <div className="text-3xl md:text-5xl leading-[4rem] uppercase font-bold p-10 md:p-[5rem]">
-            <h1 className="text-black tracking-[5px] text-[black]">
+          <div className="text-3xl mt-[5rem] md:text-5xl leading-[4rem] uppercase font-bold p-10 md:p-[5rem]">
+            <h1 className=" tracking-[5px] text-[#08538c]">
               Microlearning{" "}
             </h1>
-            <h1 className="text-black tracking-[5px] text-[black]">
+            <h1 className=" tracking-[5px] text-[#08538c]">
               made easy
             </h1>
-            <div className="text-sm md:text-lg font-normal text-2xl  md:text-[24px] leading-[150%] text-black mt-8 md:mt-[3rem]">
-              Create mobile-first courses, summaries, follow-ups in 15 minutes.
-              Slingshot complements your existing eLearning ecosystem and
+            <div className="text-sm md:text-lg font-normal   md:text-[24px] leading-[150%] text-[#08538c] mt-8 md:mt-[3rem]">
+              Create mobile-first courses, summaries,<br /> follow-ups in 15 minutes.
+              Slingshot complements <br /> your existing eLearning ecosystem and
               communication toolkit
             </div>
             <div>
-              <button className="text-xl md:text-2xl bg-[#59beba] rounded-[2rem] w-[13rem] text-[#333983] mt-8 md:mt-[3rem]">
-                
+              <button className="text-xl md:text-2xl bg-[#333983] shadow-md py-3 rounded-[2rem] w-[13rem] text-[#ffffff] mt-8 md:mt-[3rem]">
+                GIVE IT A TRY
               </button>
             </div>
           </div>

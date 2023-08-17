@@ -1,7 +1,8 @@
 
 import React, { useState } from "react";
+import Nav from "./Nav";
 
-const courses = ["html", "css", "js","taiye"];
+const courses = ["html", "css", "js","react", "mongoDB", "react native", "express","tailwind"];
 
 const SignUpForm = () => {
   const [formData, setFormData] = useState({
@@ -62,20 +63,21 @@ const SignUpForm = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-8">
+    <div className="bg-[white] w-[100%] h-[100vh] ">
+      <Nav/>
       <form
         onSubmit={handleSubmit}
-        className="bg-[gray]  shadow-md rounded px-8 pt-6 pb-8 mb-4"
+        className=" w-[35rem] ml-[35%] mt-[5rem] shadow-md rounded px-8 pt-6 pb-8 mb-4"
       >
         <div className="mb-4">
           <label
-            className="block text-gray-700 text-sm font-bold mb-2"
+            className="block text-[#08538c] text-sm font-bold mb-2"
             htmlFor="firstName"
           >
             First Name
           </label>
           <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow-md appearance-none border border-[#08538c] h-[4rem]  rounded w-full py-2 px-3 text-[#08538c] leading-tight focus:outline-none focus:shadow-outline"
             id="firstName"
             type="text"
             name="firstName"
@@ -87,13 +89,13 @@ const SignUpForm = () => {
 
         <div className="mb-4">
           <label
-            className="block text-gray-700 text-sm font-bold mb-2"
+            className="block text-[#08538c] text-sm font-bold mb-2"
             htmlFor="lastName"
           >
             Last Name
           </label>
           <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow-md appearance-none border border-[#08538c] h-[4rem] rounded w-full py-2 px-3 text-[#08538c] leading-tight focus:outline-none focus:shadow-outline"
             id="lastName"
             type="text"
             name="lastName"
@@ -105,13 +107,13 @@ const SignUpForm = () => {
 
         <div className="mb-4">
           <label
-            className="block text-gray-700 text-sm font-bold mb-2"
+            className="block text-[#08538c] text-sm font-bold mb-2"
             htmlFor="email"
           >
             Email
           </label>
           <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow-md appearance-none border border-[#08538c] h-[4rem] rounded w-full py-2 px-3 text-[#08538c] leading-tight focus:outline-none focus:shadow-outline"
             id="email"
             type="text"
             name="email"
@@ -123,13 +125,13 @@ const SignUpForm = () => {
 
         <div className="mb-4">
           <label
-            className="block text-gray-700 text-sm font-bold mb-2"
+            className="block text-[#08538c] text-sm font-bold mb-2"
             htmlFor="password"
           >
             Password
           </label>
           <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow-md appearance-none border border-[#08538c] h-[4rem] rounded w-full py-2 px-3 text-[#08538c] leading-tight focus:outline-none focus:shadow-outline"
             id="password"
             type="text"
             name="password"
@@ -140,11 +142,11 @@ const SignUpForm = () => {
         </div>
 
         <div className="mb-4">
-  <label className="block text-gray-700 text-sm font-bold mb-2">
-    Interests
+  <label className="block text-[#08538c] text-sm font-bold mb-2">
+   COURES
   </label>
   {courses.map((item) => (
-    <label key={item} className="inline-flex items-center mr-4">
+    <label key={item} className="inline-flex  items-center mr-4">
       <input
         type="checkbox"
         name="courses"
@@ -152,7 +154,7 @@ const SignUpForm = () => {
       
         onChange={(e) => handleInputChange("courses", e.target.value)}
       />
-      <span className="ml-2">{item}</span>
+      <span className="ml-2  text-[#08538c]">{item}</span>
     </label>
   ))}
 </div>
@@ -160,13 +162,13 @@ const SignUpForm = () => {
 
         <div className="flex items-center justify-between">
           <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            className="bg-[#333983] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="submit"
           >
             Sign Up
           </button>
         </div>
-        <div className="text-[black] text-center">{message}</div>
+        <div className="text-[text-[#08538c]] text-center">{message}</div>
       </form>
     </div>
   );

@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import Header from './Components/Header'
 import Main from './Components/Main'
 
-export default class  extends Component {
-  render() {
+const Layout = () =>{
     return (
         <div className='h-[100svh]'>
             <Header/>
@@ -11,5 +10,5 @@ export default class  extends Component {
         </div>
     )
   }
-}
+export default Layout;
 // 08160788494
