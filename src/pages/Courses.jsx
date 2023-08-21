@@ -31,56 +31,61 @@ const Courses = () => {
   const data = [
     {
       key: "1",
-      studentName: "Fadeelah",
-      courseSelected: "Java Script",
-      courseDuration: "One Month"
+      courseName: "JavaScript",
+      courseEnrolled: "0",
+      status: "One Month"
     },
     {
       key: "2",
-      studentName: "Precious",
-      courseSelected: "Python",
-      courseDuration: "One Month"
+      courseName: "React.JS",
+      courseEnrolled: "0",
+      status: "One Month"
     },
     {
       key: "3",
-      studentName: "David",
-      courseSelected: "ReactJS",
-      courseDuration: "One Month"
+      courseName: "Hyper Text Markup Language(HTML)",
+      courseEnrolled: "0",
+      status: "One Month"
     },
     {
-      key: "3",
-      studentName: "David",
-      courseSelected: "ReactJS",
-      courseDuration: "One Month"
+      key: "4",
+      courseName: "Cascading Style Sheet(CSS)",
+      courseEnrolled: "0",
+      status: "One Month"
     },
     {
-      key: "3",
-      studentName: "David",
-      courseSelected: "ReactJS",
-      courseDuration: "One Month"
+      key: "5",
+      courseName: "PHP",
+      courseEnrolled: "0",
+      status: "One Month"
     },
     {
-      key: "3",
-      studentName: "David",
-      courseSelected: "ReactJS",
-      courseDuration: "One Month"
+      key: "6",
+      courseName: "Angular",
+      courseEnrolled: "0",
+      status: "One Month"
     }
   ];
 
   const columns = [
     {
-      title: "Name",
-      dataIndex: "studentName",
+      title: "S/N",
+      dataIndex: "key",
       key: "key"
     },
     {
-      title: "Course",
-      dataIndex: "courseSelected",
+      title: "Name",
+      dataIndex: "courseName",
+      key: "key"
+    },
+    {
+      title: "Enrolled",
+      dataIndex: "courseEnrolled",
       key: "key"
     },
     {
       title: "Duration",
-      dataIndex: "courseDuration",
+      dataIndex: "status",
       key: "key"
     }
   ];
@@ -88,11 +93,11 @@ const Courses = () => {
   
 
   return (
-    <div className='flex flex-col bg-[#d1d1d1]'>
+    <div className='flex flex-col'>
       <div className='p-10 flex flex-wrap justify-evenly gap-10 mb-20'>
 
             {courses.map((course, index) => {
-              return <div key={index} className='h-[9rem] w-80 bg-[white] rounded-md shadow-sm flex flex-col justify-center items-center'>
+              return <div key={index} className='h-[9rem] w-80 bg-[white] rounded-md shadow-md shadow-[grey] cursor-pointer flex flex-col justify-center items-center hover:translate-y-5 hover:bg-[#e4dfdf] hover:text-[#14408b]'>
                   {/* <div className='h-[10rem] w-[10rem] mx-auto'>{course.image}</div> */}
                   <h1 className='font-extrabold text-center'>{course.courseNumber}</h1>
                   <h1 className='font-extrabold text-center'>{course.courseName}</h1>

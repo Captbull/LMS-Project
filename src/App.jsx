@@ -1,27 +1,24 @@
-import React, { useState } from 'react'
-import Header from './components/Header'
-import SideBar from './components/SideBar'
-import Main from './components/Main'
+import React from 'react'
 import { Route, Routes } from 'react-router'
+import Display from './Display'
+import Profile from '../src/pages/Profile'
+import Courses from '../src/pages/Courses'
+
 
 const App = () => {
-
-  const [pageTitle] = useState("Instructor")
   return (
-    <div className='h-[100svh] grid grid-cols-[10%_1fr] bg-[#f5f5f5] overflow-hidden'>
-      <SideBar></SideBar>
-
-      <div className='grid grid-rows-[10%_1fr]'>
-        <Header pageTitle={pageTitle}></Header>
-        <Main></Main>
-      </div>
+    <div>
+      <Routes>
+        <Route path='/' element={<Display />}>
+          <Route path="/" element={<Profile />}></Route>
+          <Route path="/Courses" element={<Courses />}></Route>
+        </Route>
        
-      
-
-      
-
+        
+   
+        
+      </Routes>
     </div>
-  
   )
 }
 
