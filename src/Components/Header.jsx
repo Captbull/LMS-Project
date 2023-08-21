@@ -41,7 +41,7 @@ export default class Header extends Component {
                <Link to="/LogIn">Login</Link>
             </button> 
             <button className="bg-[white]  px-2 py-1 rounded cursor-pointer text-[#0769b2]">
-               <Link to="/SignUpForm">SignUp</Link>
+               <Link to="/SignUpForm">Register</Link>
             </button>
 
             
