@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react'
-import avatar from '../images/avatar.jpg'
+// import avatar from '../images/avatar.jpg'
 import axios from "axios";
 
 const profileAPI = "https://lms-backend-2mm5.onrender.com/user/"
+
 
 const Profile = () => {
     
     const [loading, setLoading] = useState(false)
     const [profiles, setProfiler] = useState([
       {
-  
         courses: null,
         dateCreated: null,
         email: null,
@@ -19,6 +19,8 @@ const Profile = () => {
         _id: null
       }
     ])
+
+    const arrayAPI = [];
     
   
     const getProfiler = async() => {
@@ -29,9 +31,9 @@ const Profile = () => {
             "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGRlMDYwMDAyNzZlN2M5Mjg2MDVlMDkiLCJpYXQiOjE2OTI2MjgxNzAsImV4cCI6MTY5MjcxNDU3MH0.B5rcxcvaE5fd622qFeTCgz9C07hiXybb0rXl7gPtd_w"
           }
         });
-        setProfiler(response.data)
+        setProfiler(response.data.data)
         setLoading(false)
-        console.log(response.data)
+        // console.log(arrayAPI.push(setProfiler(response.data.data)))
       } catch (error) {
         console.log(error);
         setLoading(false)
@@ -42,6 +44,8 @@ const Profile = () => {
       getProfiler()
     }, [])
 
+arrayAPI.push(profiles)
+console.log(arrayAPI)
 
   return (
 
@@ -54,7 +58,7 @@ const Profile = () => {
     ) : 
      (
         <section className='h-[100%] flex flex-auto justify-between items-start m-[2rem]'>
-        {/* {profiles?.map((profiler, index) => {
+        {/* {arrayAPI?.map((profiler, index) => {
             console.log(profiles)
             return <div key={index} className="h-[100%] w-[100%] bg-white rounded-3xl flex items-start justify-evenly">
                 <div className='rounded-full mt-[3rem] border-[.125rem] border-[#1062ab]'>img: <img src={ avatar } alt="" className='rounded-full' />,</div>
@@ -67,6 +71,13 @@ const Profile = () => {
                 </div>
             </div>
         })} */}
+
+        {arrayAPI.map((item, index) => {
+          return <div key={index}>
+            <h1>{}</h1>
+          </div>
+        })}
+        
     </section>
      ) } 
     </>
