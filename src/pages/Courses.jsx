@@ -1,6 +1,7 @@
 import React from 'react'
 import book from '../images/book.png'
-import { Table } from 'antd';
+import { Pagination, Table } from 'antd';
+
 
 const Courses = () => {
 
@@ -8,23 +9,23 @@ const Courses = () => {
   const courses = [
     {
       image: <img src={ book } alt="" />,
-      courseNumber: "100",
-      courseName: "Total Courses",
+      courseNumber: "10",
+      courseName: "Uploaded Courses",
     },
     {
       image: <img src={ book } alt="" />,
-      courseNumber: "2",
-      courseName: "Total Done",
-    },
-    {
-      image: <img src={ book } alt="" />,
-      courseNumber: "5",
+      courseNumber: "6",
       courseName: "Approved Courses",
     },
     {
       image: <img src={ book } alt="" />,
-      courseNumber: "25",
-      courseName: "Certified Courses",
+      courseNumber: "3",
+      courseName: "Pending Courses",
+    },
+    {
+      image: <img src={ book } alt="" />,
+      courseNumber: "1",
+      courseName: "Rejected Courses",
     }
   ];
 
@@ -108,8 +109,8 @@ const Courses = () => {
       </div>
 
       <div className='w-[90%] mx-auto'>
-        <Table dataSource={data} columns={columns}>
-
+        <Table dataSource={data} columns={columns} style={{backgroundColor: "white", borderRadius: "1rem"}} pagination={2}>
+            <Pagination defaultCurrent={1} total={50} />
         </Table>
       </div>
     </div>

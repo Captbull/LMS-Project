@@ -10,11 +10,11 @@ const Profile = () => {
     const [loading, setLoading] = useState(false)
     const [profiles, setProfiler] = useState([
       {
-        courses: null,
+        courses: [null],
         dateCreated: null,
         email: null,
         firstName: null,
-        lastName: [null],
+        lastName: null,
         role: null,
         _id: null
       }
@@ -28,12 +28,11 @@ const Profile = () => {
       try {
         const response = await axios.get(profileAPI + "getUserProfile", {
           headers: {
-            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGRlMDYwMDAyNzZlN2M5Mjg2MDVlMDkiLCJpYXQiOjE2OTI2MjgxNzAsImV4cCI6MTY5MjcxNDU3MH0.B5rcxcvaE5fd622qFeTCgz9C07hiXybb0rXl7gPtd_w"
+            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGRlMDYwMDAyNzZlN2M5Mjg2MDVlMDkiLCJpYXQiOjE2OTI3NjkzOTQsImV4cCI6MTY5Mjg1NTc5NH0.eLqKsnXtCIuhxGEZpTmMogofurctAKRceRE1sw00mZs"
           }
         });
         setProfiler(response.data.data)
         setLoading(false)
-        // console.log(arrayAPI.push(setProfiler(response.data.data)))
       } catch (error) {
         console.log(error);
         setLoading(false)
@@ -74,7 +73,7 @@ console.log(arrayAPI)
 
         {arrayAPI.map((item, index) => {
           return <div key={index}>
-            <h1>{}</h1>
+            <h1>{item.role}</h1>
           </div>
         })}
         

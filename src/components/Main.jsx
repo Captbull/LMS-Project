@@ -1,7 +1,7 @@
 import React from "react";
 import Courses from "../pages/Courses";
 import Profile from "../pages/Profile";
-// import avatar from "../images/avatar.jpg";
+import PageNotFound from "../PageNotFound";
 
 
 const Main = () => {
@@ -16,6 +16,7 @@ const Main = () => {
     <div className="bg-[#f1f1f1]">
       <Profile></Profile>
       <Courses></Courses>
+      <PageNotFound></PageNotFound>
     </div>
   );
 };
