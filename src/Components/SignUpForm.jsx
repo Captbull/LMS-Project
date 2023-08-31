@@ -1,7 +1,4 @@
-
 import React, { useState } from "react";
-
-import Header from "./Header";
 import Taiyeheader from "./Taiyeheader";
 
 const courses = ["html", "css", "js","react", "mongoDB", "react native", "express","tailwind"];

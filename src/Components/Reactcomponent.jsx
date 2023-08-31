@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "./Header";
 import YouTube from "react-youtube";
 import Taiyeheader from "./Taiyeheader";
 
