@@ -1,8 +1,9 @@
 import React from "react";
 import sail from "./images/sail_image-removebg-preview.png";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 
 const Nav = () => {
+
   return (
     <div>
       <nav className="container mx-auto px-4 py-2  flex flex-col md:flex-row justify-between items-center">
@@ -18,10 +19,11 @@ const Nav = () => {
               </button>
             </li>
             <li className="text-[#333983]">
-              <button>Courses</button>
+             Courses
             </li>
             <li className="text-[#333983]">
-              <button>Contact</button>
+              
+              <Link to="/Contactus"><button>Contact</button></Link>
             </li>
           </ul>
         </div>

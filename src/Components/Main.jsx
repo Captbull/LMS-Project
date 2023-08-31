@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import { Link } from "react-router-dom";
 import taiye from "./images/teewhy.jpg";
 
 export default class Main extends Component {
@@ -20,9 +20,11 @@ export default class Main extends Component {
               communication toolkit
             </div>
             <div>
+              <Link to="/coursespage">
               <button className="text-xl md:text-2xl bg-[#333983] shadow-md py-3 rounded-[2rem] w-[13rem] text-[#ffffff] mt-8 md:mt-[3rem]">
                 GIVE IT A TRY
               </button>
+              </Link>
             </div>
           </div>
         </div>

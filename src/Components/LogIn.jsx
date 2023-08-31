@@ -1,13 +1,15 @@
 import React from 'react'
-import Nav from '../Components/Nav'
-import Contents from '../Components/Contents'
+
+
+import Header from './Header'
+import Contents from './Contents'
 
 
 const LogIn = () => {
   return (
     <div className=' bg-zinc-150 h-[100vh] '>
-     <Nav/> 
-     <Contents/>
+     <Header/>
+    <Contents/>
     </div>
   )
 }
