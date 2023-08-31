@@ -1,31 +1,62 @@
-import React from 'react'
-import { CgProfile } from "react-icons/cg"
-import { BsBook } from 'react-icons/bs'
-import { FaAward } from 'react-icons/fa'
-import { MdQuiz } from 'react-icons/md'
-import { FiSettings } from 'react-icons/fi'
-import { BiLogOut } from 'react-icons/bi'
-import sail1 from '../images/sail1.png'
-import { Link } from 'react-router-dom'
+import React from "react";
+import Logo from "../images/sail2.png";
+import { RiAdminLine } from "react-icons/ri";
+import { RxDashboard } from "react-icons/rx";
+import { RxAvatar } from "react-icons/rx";
+import { GiBlackBook } from "react-icons/gi";
+import { MdApproval } from "react-icons/md";
+import { Link } from "react-router-dom";
+import {BiLogOut} from 'react-icons/bi';
 
 const SideBar = () => {
+  
+  
   return (
-    <div className='flex flex-col items-center shadow-sm shadow-[grey] bg-white'>
-      <div className=''>
-        <img src={ sail1 } alt="" className='h-[5rem] w-[5rem]'/>
+    <div className=" flex flex-col h-[100vh] bg-[#5bbcb3] bg-opacity-30  shadow-green-700 shadow-lg min-w-fit">
+      <img src={Logo} alt="" className="mb-[4rem] h-[6rem] w-[15rem]" />
+
+      <div className=" flex gap-2 bg-[#14408b] bg-opacity-40 mb-[2.5rem] items-center pl-3 ">
+        <RiAdminLine className=" h-[2rem] w-[1.5rem]" />
+        <span className=" font-medium medium text-lime-800 ">ADMIN</span>
       </div>
-        <h1 className='font-bold'>Dashboard</h1>
 
-        <div className='mt-[2rem] ml-[3rem] flex flex-col gap-[2rem] font-semibold cursor-pointer mr-[2rem]'>
-          <Link to="/Profile" className='flex flex-row items-center justify-around gap-[0.2rem]'> <CgProfile/>Profile</Link>
-          <Link to="/Courses" className='flex flex-row items-center justify-around gap-[0.2rem]'> <BsBook/> Courses</Link>
-          <Link className='flex flex-row items-center justify-around gap-[0.2rem]'> <FaAward/> Awards</Link>
-          <Link className='flex flex-row items-center justify-around gap-[0.2rem]'> <MdQuiz/> Quizzes</Link>
-          <Link className='flex flex-row items-center justify-around gap-[0.2rem]'> <FiSettings/> Settings</Link>
-          <Link className='flex flex-row items-center justify-around gap-[0.2rem]'> <BiLogOut/> Log Out</Link>
-        </div>
+      <div className=" flex gap-2 mb-[1rem]  items-center pl-3 hover:bg-[#f2b907]">
+        <RxDashboard className=" h-[2rem] w-[1.5rem]" />
+        <span className=" text-[#14408b] text-lg  ">
+        <Link to="/">Dashboard</Link>
+        </span>
+      </div>
+
+      <div className=" flex gap-2 mb-[1rem]  items-center pl-3 hover:bg-[#f2b907]">
+        <RxAvatar className=" h-[2rem] w-[1.5rem]" />
+        <span className="text-[#14408b] text-lg ">
+          <Link to="/Instructor">Instructor</Link>
+        </span>
+      </div>
+
+      <div className=" flex gap-2  items-center mb-[1rem] pl-3 hover:bg-[#f2b907]">
+        <GiBlackBook className=" h-[2rem] w-[1.5rem]" />
+        <span className="text-[#14408b] text-lg ">
+          <Link to="/Courses">Courses</Link>
+        </span>
+      </div>
+
+      <div className=" flex gap-2 mb-[1rem]  items-center pl-3 hover:bg-[#f2b907] ">
+        <MdApproval className=" h-[2rem] w-[1.5rem]" />
+        <span className="text-[#14408b] text-lg ">
+        <Link to='/Approved'>
+        Approved</Link>
+        </span>
+        
+      </div>
+      <div className=" flex gap-2 mb-[1rem]  items-center pl-3 hover:bg-[#f2b907] ">
+        <BiLogOut className=" h-[2rem] w-[1.5rem]" />
+        <span className="text-[#14408b] text-lg ">
+        Log Out
+        </span>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default SideBar
+export default SideBar;

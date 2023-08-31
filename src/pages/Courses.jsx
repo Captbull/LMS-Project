@@ -88,7 +88,7 @@ const Courses = () => {
   
 
   return (
-    <div className='flex flex-col bg-[#d1d1d1]'>
+    <div className='flex flex-col bg-[#d1d1d1] h-[100%]'>
       <div className='p-10 flex flex-wrap justify-evenly gap-10 mb-20'>
 
             {courses.map((course, index) => {
