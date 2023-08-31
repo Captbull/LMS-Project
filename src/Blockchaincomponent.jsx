@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./Components/Header";
 import YouTube from "react-youtube";
+import Taiyeheader from "./Components/Taiyeheader";
 
 const BlockchainComponent = () => {
   const videoId = "gyMwXuJrbJQ";
@@ -11,7 +12,7 @@ const BlockchainComponent = () => {
 
   return (
     <div className="bg-gray-100 min-h-screen">
-      <Header />
+      <Taiyeheader/>
       <div className="container mx-auto p-4">
         <YouTube videoId={videoId} opts={opts} className="flex justify-center items-center h-screen rounded-tl-lg" />
         <h1 className="text-3xl text-[#08538C] font-semibold mb-4 mt-8">Unlocking the Potential of Blockchain Technology</h1>

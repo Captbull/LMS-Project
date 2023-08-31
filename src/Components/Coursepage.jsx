@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import taiye from "../Components/images/teewhy.jpg"; // Import your course image
-import Header from "./Header";
+import Taiyeheader from "./Taiyeheader";
 const CoursePage = () => {
   const [activeTab, setActiveTab] = useState("Overview");
   const handleTabChange = (tabName) => {
@@ -82,7 +82,7 @@ const CoursePage = () => {
   }
   return (
     <div>
-      <Header/>
+      <Taiyeheader/>
     <div className="flex flex-wrap ">
       
       <div className="w-1/4 bg-gray-800  text-white p-4 ">

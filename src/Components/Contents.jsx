@@ -1,35 +1,45 @@
 import React, { useState } from "react";
 import { FaEye, FaRegEyeSlash } from "react-icons/fa";
-
+import { useNavigate } from "react-router";
 const Contents = () => {
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState("");
-  const [email, setEmail ]= useState("")
-  const [loading, setLoading] = useState(false)
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const togglePasswordVisibility = () => {
     setShowPassword((prevState) => !prevState);
   };
-  const loginHandler = async (e)=>{
-    setLoading(true)
-    e.preventDefault()
+  const loginHandler = async (e) => {
+    setLoading(true);
+    e.preventDefault();
     try {
-      const request = await fetch ("https://lms-backend-2mm5.onrender.com/login/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({email,password}),
-      })
-      const response = await request.json()
-      console.log(response)
-      setLoading(false)
-      alert(response.responseMessage)
+      const request = await fetch(
+        "https://lms-backend-2mm5.onrender.com/login/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, password }),
+        }
+      );
+      const response = await request.json();
+      if (request.ok) {
+        if (response.data.role === "INSTRUCTOR") {
+          navigate("", { replace: true });
+        } else {
+          navigate("/Display/profile", { replace: true });
+        }
+      }
+      console.log(response);
+      setLoading(false);
+      alert(response.responseMessage);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  
-  }
+  };
   return (
     <div className="text-black pt-[3rem] bg-inherit  ">
       <div className="text-4xl font-semibold text-center">Welcome Back</div>
@@ -46,7 +56,7 @@ const Contents = () => {
           className="w-[24rem] h-16 rounded-lg border border-zinc-300 pl-5 "
           onChange={(e) => setEmail(e.target.value)}
           value={email}
-          />
+        />
         <div className="relative">
           <input
             type={showPassword ? "text" : "password"}
@@ -70,9 +80,13 @@ const Contents = () => {
             <form>
               <input type="checkbox" name="" id="Remember" />
 
-
-<label htmlFor="Remember" className="text-zinc-900 text-xs font-normal tracking-tight"> Remember me</label>
-              
+              <label
+                htmlFor="Remember"
+                className="text-zinc-900 text-xs font-normal tracking-tight"
+              >
+                {" "}
+                Remember me
+              </label>
             </form>
           </div>
         </div>
@@ -85,8 +99,11 @@ const Contents = () => {
       </div>
 
       <div className="mt-4 flex justify-center items-center">
-        <button className="text-zinc-600 text-lg font-normal w-[24rem] h-16 rounded-lg bg-zinc-200 " onClick={loginHandler}>
-         {loading ? "Signing in" :  "Log In"}
+        <button
+          className="text-zinc-600 text-lg font-normal w-[24rem] h-16 rounded-lg bg-zinc-200 "
+          onClick={loginHandler}
+        >
+          {loading ? "Signing in" : "Log In"}
         </button>
       </div>
     </div>

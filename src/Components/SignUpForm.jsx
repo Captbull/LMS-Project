@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 
 import Header from "./Header";
+import Taiyeheader from "./Taiyeheader";
 
 const courses = ["html", "css", "js","react", "mongoDB", "react native", "express","tailwind"];
 
@@ -65,7 +66,7 @@ const SignUpForm = () => {
 
   return (
     <div className="bg-[white] w-[100%] h-[100vh] ">
-      <Header/>
+    <Taiyeheader/>
       <form
         onSubmit={handleSubmit}
         className=" w-[35rem] ml-[35%] mt-[5rem] shadow-md rounded px-8 pt-6 pb-8 mb-4"

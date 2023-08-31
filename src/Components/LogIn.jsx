@@ -1,14 +1,15 @@
 import React from 'react'
 
 
-import Header from './Header'
+
 import Contents from './Contents'
+import Taiyeheader from './Taiyeheader'
 
 
 const LogIn = () => {
   return (
     <div className=' bg-zinc-150 h-[100vh] '>
-     <Header/>
+    <Taiyeheader/>
     <Contents/>
     </div>
   )

@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./Components/Header";
 import YouTube from "react-youtube";
+import Taiyeheader from "./Components/Taiyeheader";
 
 const Igbo = () => {
   const videoId = "Bnakxm3QdQg";
@@ -11,7 +12,7 @@ const Igbo = () => {
 
   return (
     <div>
-    <Header/>
+    <Taiyeheader/>
       <div className="content-container p-4">
       <YouTube
           videoId={videoId}

@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import emailjs from "emailjs-com";
-import Header from "./Header";
+import Taiyeheader from "./Taiyeheader";
 
 const ContactUs = () => {
   const form = useRef();
@@ -24,7 +24,7 @@ const ContactUs = () => {
 
   return (
     <div>
-      <Header />
+    <Taiyeheader/>
       <div
         className="flex items-center justify-center min-h-screen bg-gray-900 font-[archivo-regular]"
         id="contact"

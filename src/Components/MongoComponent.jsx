@@ -1,6 +1,7 @@
 import React from "react";
 import YouTube from "react-youtube";
 import Header from "./Header";
+import Taiyeheader from "./Taiyeheader";
 
 const MongoComponent = () => {
   const videoId = "Oe421EPjeBE";
@@ -11,7 +12,7 @@ const MongoComponent = () => {
 
   return (
     <div>
-      <Header />
+     <Taiyeheader/>
       <div className="content-container p-4">
         <YouTube
           videoId={videoId}

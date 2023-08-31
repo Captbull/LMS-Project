@@ -1,6 +1,7 @@
 import React from "react";
-import Header from "./Header";
+
 import YouTube from "react-youtube";
+import Taiyeheader from "./Taiyeheader";
 
 const Expresscompo = () => {
   const videoId = "Oe421EPjeBE";
@@ -11,7 +12,7 @@ const Expresscompo = () => {
 
   return (
     <div className="bg-gray-100 min-h-screen">
-      <Header />
+      <Taiyeheader/>
       <div className="container mx-auto p-4">
         <YouTube
           videoId={videoId}

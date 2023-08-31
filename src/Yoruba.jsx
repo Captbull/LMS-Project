@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./Components/Header";
 import YouTube from "react-youtube";
+import Taiyeheader from "./Components/Taiyeheader";
 
 const Yorubacomponent = () => {
   const videoId = "s1Gnnt6IqyE";
@@ -11,7 +12,7 @@ const Yorubacomponent = () => {
 
   return (
     <div>
-    <Header/>
+    <Taiyeheader/>
       <div className="content-container p-4">
       <YouTube
           videoId={videoId}

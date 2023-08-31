@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./Components/Header";
 import YouTube from "react-youtube";
+import Taiyeheader from "./Components/Taiyeheader";
 
 const Hausa = () => {
   const videoId = "KY-T159CcTo"; // Update this with the relevant Hausa video ID
@@ -11,7 +12,7 @@ const Hausa = () => {
 
   return (
     <div>
-      <Header />
+    <Taiyeheader/>
       <div className="content-container p-4">
         <YouTube videoId={videoId} opts={opts} className="mx-auto mb-6" />
         <h2 className="text-2xl font-semibold mb-2 text-[#08538C]">Hausa Culture and Language</h2>
